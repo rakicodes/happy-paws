@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/api/posts/'
+const API_URL = 'https://happy-paws.onrender.com/api/posts/'
 
 // add post
 const addPost = async (post, token) => {
