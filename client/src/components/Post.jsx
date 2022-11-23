@@ -10,7 +10,7 @@ const Post = ({ post, showDelete }) => {
 
 
     return (
-        <div class="p-relative">
+        <div className="p-relative">
             <img src={post.image} alt=""/>
             { showDelete && user && user._id===post.user && <span className="deleteBtn" onClick={() => dispatch(deletePost(post._id))}><HiXCircle/></span> }
         </div>

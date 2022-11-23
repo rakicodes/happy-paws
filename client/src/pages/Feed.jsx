@@ -29,7 +29,7 @@ const Feed = () => {
 
     if (isLoading) {
       return  ( 
-        <Container>
+        <Container className="min-vh-100 d-flex align-items-center justify-content-center">
           <Spinner />
         </Container>
       )

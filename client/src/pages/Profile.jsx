@@ -37,8 +37,8 @@ const Profile = () => {
 
   if (isLoading) {
     return  ( 
-      <Container>
-        <Spinner />
+      <Container className="min-vh-100 d-flex align-items-center justify-content-center">
+      <Spinner />
       </Container>
     )
   }
