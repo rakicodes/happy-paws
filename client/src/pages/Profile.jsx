@@ -1,13 +1,12 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react'
 
 import { getUserPosts, reset } from '../features/posts/postSlice'
 
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Spinner from 'react-bootstrap/Spinner';
-
+import Masonry from '@mui/lab/Masonry';
 
 import PostForm from '../components/PostForm'
 import Post from '../components/Post'
@@ -50,11 +49,11 @@ const Profile = () => {
       <PostForm />
 
         { posts.length > 0 ? 
-          <Row xs={1} sm={2} md={4} className="g-1 mt-2">
+          <Masonry columns={4} spacing={2} className="mt-1">
             { posts.map((post) => 
               <Post key={post._id} post={post} showDelete={true}/>
             )}
-        </Row> :
+        </Masonry> :
         <p className="mt-3">No posts</p>
         }
     </Container>  )

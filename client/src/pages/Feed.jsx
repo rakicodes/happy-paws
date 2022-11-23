@@ -5,8 +5,8 @@ import { getPosts, reset } from '../features/posts/postSlice'
 
 import Container from 'react-bootstrap/Container';
 import Spinner from 'react-bootstrap/Spinner';
+import Masonry from '@mui/lab/Masonry';
 
-import Row from 'react-bootstrap/Row';
 import Post from '../components/Post'
 
 const Feed = () => {
@@ -38,14 +38,13 @@ const Feed = () => {
     return (
         <>
             <Container>
-            <h1 className="mt-3">Hi</h1>
             <section>
                 { posts.length > 0 ? 
-                <Row xs={1} sm={2} md={4} className="g-1 mt-2">
+                <Masonry columns={4} spacing={2} className="mt-1">
                 { posts.map((post) => 
                     <Post key={post._id} post={post} showDelete={false} />
                     )}
-                </Row> :
+                </Masonry> :
                 <span className="mt-5">No posts</span> 
                 }
             </section>
