@@ -44,12 +44,14 @@ const createPost = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error("Please add an image")
     }
+    const [lat, lng] = req.body.location.split(",")
 
     const post = await Post.create({
         image: image.secure_url,
         cloudinaryId: image.public_id, 
         likes: 0,
         user: req.user.id,
+        location: (lat && lng) ? [Number(lng), Number(lat)] : null
     })
 
     res.status(200).json(post)

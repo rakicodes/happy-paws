@@ -18,6 +18,9 @@ const Post = mongoose.Schema({
       type: Number,
       required: true,
     },
+    location: {
+      type: Array,
+    }
 }, {
   timestamps: true
 })

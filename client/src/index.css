@@ -27,3 +27,11 @@ img {
 .p-relative {
   position: relative;
 }
+
+.map-container {
+  height: 75vh;
+}
+
+.right-end {
+  text-align: right;
+}

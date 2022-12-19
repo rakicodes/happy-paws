@@ -73,7 +73,6 @@ const Register = () => {
                 <h1>Register</h1>
                 <p>Please create an account</p>
             </section>
-
             <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3">
                     <Form.Label>Name</Form.Label>

@@ -11,7 +11,7 @@ import Masonry from '@mui/lab/Masonry';
 import PostForm from '../components/PostForm'
 import Post from '../components/Post'
 
-const Profile = () => {
+const Profile = ({ location }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -47,11 +47,10 @@ const Profile = () => {
     <Container>
       <h2 className="mt-3">Hi {user.name}!</h2>
       <PostForm />
-
         { posts.length > 0 ? 
           <Masonry columns={4} spacing={2} className="mt-1">
             { posts.map((post) => 
-              <Post key={post._id} post={post} showDelete={true}/>
+              <Post key={post._id} post={post} showDelete={true} userLocation={location} />
             )}
         </Masonry> :
         <p className="mt-3">No posts</p>

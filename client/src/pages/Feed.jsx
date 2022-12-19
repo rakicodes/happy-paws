@@ -9,10 +9,12 @@ import Masonry from '@mui/lab/Masonry';
 
 import Post from '../components/Post'
 
-const Feed = () => {
+const Feed = ({ location }) => {
+
     const dispatch = useDispatch();
   
     const { posts, isLoading, isError, isSuccess, message } = useSelector((state) => state.posts)
+
   
     useEffect(() => {
       if (isError) {
@@ -42,7 +44,7 @@ const Feed = () => {
                 { posts.length > 0 ? 
                 <Masonry columns={4} spacing={2} className="mt-1">
                 { posts.map((post) => 
-                    <Post key={post._id} post={post} showDelete={false} />
+                    <Post key={post._id} post={post} showDelete={false} userLocation={location} />
                     )}
                 </Masonry> :
                 <span className="mt-5">No posts</span> 
